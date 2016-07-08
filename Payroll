@@ -1,0 +1,68 @@
+using System; //this will use the all the class is system library
+using System.Threading;//this will use methods in the threading class.
+
+public class Payroll
+{
+    //this is where the Main method will run the code
+    public static void Main()
+    {
+        //instance area.
+        string fullName;
+        string ssn;
+        string stringValueHPR;
+        string stringValueNHW;
+        double HPR;
+        int NHW;
+        double GrossPay;
+        double FWHT;
+        double SWHT;
+        double NetPay;
+        double doubleValueNHW;
+
+        //Into to a series of quesitons.
+        Console.WriteLine("I am gong to asking you a question about your work.");//prompt the user for input
+        Console.WriteLine("These questions are to determined your net pay.");//prompt the user for input
+        Thread.Sleep(3200);//halt the program for dramatic effect
+        Console.Clear();//clear the console to stop console clutter.
+
+        //Part one is to start with your name.
+        Console.Write("What is your full name  :     ");//prompt user for input
+        fullName = Console.ReadLine();//record user input
+        Thread.Sleep(2500);//halt program for dramatic effect
+        Console.Clear();// clear console to stop console clutter.
+
+        //Part two is to ask for your ssn.
+        Console.WriteLine("What is your Social Security number.");//prompt user for input 
+        Console.WriteLine("******** DO NOT USE YOUR REAL NUMBER *****");//instructions to user.
+        Console.Write("   : ");//
+        ssn = Console.ReadLine();
+        Thread.Sleep(2500);
+        Console.Clear();
+
+        //Part three is about How much you make an hour
+        Console.Write("How much money do you make in a hour");
+        Console.Write("/n make sure to add the cents: ");
+        stringValueHPR = Console.ReadLine();
+        HPR = Convert.ToDouble(stringValueHPR);
+
+        //part four is about hour that worked
+        Console.WriteLine("How many hours do you work this week?    ");
+        stringValueNHW = Console.ReadLine();
+        NHW = Convert.ToInt32(stringValueNHW);
+        doubleValueNHW = Convert.ToDouble(NHW);
+        Thread.Sleep(2500);
+        Console.Clear();
+
+        //This section is to start
+        Console.WriteLine("This is a summary for {0}", fullName);
+        Console.WriteLine("SSN: {0}", ssn);
+        Console.WriteLine("You have worked {0} hours at a payrate of {1}", NHW, HPR);
+        Console.WriteLine("\nGross Pay: {0, 20}", GrossPay = NHW * HPR);
+        Console.WriteLine("Federal Withholding: {0, 10}", FWHT = GrossPay * .15);
+        Console.WriteLine("State withholding:   {0, 10}", SWHT = GrossPay * .5);
+        Console.WriteLine("--------------------------------------------------------");
+        Console.WriteLine("Net Pay:{0, 22}", NetPay = GrossPay - FWHT - SWHT);
+
+
+    }
+}
