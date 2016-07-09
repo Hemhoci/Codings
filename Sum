@@ -1,0 +1,48 @@
+using System;
+
+public class Users
+{
+    public static void Main()
+    {   
+        //This is a instanceation area.
+        string num1, num2, num3;
+        int numb1, numb2;
+        int CurrentInput;
+        int total;
+        int NewInput;
+
+        //The first section 
+        Console.Write("type a number two  number\n");//prompt to tell user what to do.  
+        Console.Write("What is your first number");//user input 
+        num1 = Console.ReadLine();//input string of characters
+        numb1 = Convert.ToInt32(num1);// convert string to int
+       
+        //The second sections 
+        Console.Write("What is your second number? ");//prompt for user.    
+        num2 = Console.ReadLine();//user input
+        numb2 = Convert.ToInt32(num2);//convert string of int
+        
+        //the final section. How to quite the program.
+        Console.Write("typing 999 will about operation. :  ");//information for user to exit program
+
+        CurrentInput = numb1 + numb2;//sum of user input 
+
+        Console.WriteLine("Your curent value is currently at {0}", CurrentInput);//current sum for user.
+
+
+
+        //Do while loop.
+        do
+        {
+            
+            Console.WriteLine("Select another number\n");
+            Console.WriteLine("type 999 to stop this program");
+
+            num3 = Console.ReadLine();
+            NewInput = Convert.ToInt32(num3);
+            total = CurrentInput + NewInput;
+            Console.WriteLine("Your at {0}", total);
+
+        } while (numb1 != 999 && numb2 != 999 && NewInput != 999);
+    }
+}
