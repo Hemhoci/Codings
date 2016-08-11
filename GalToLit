@@ -1,0 +1,20 @@
+import java.util.Scanner;
+
+class GalToLit
+{
+  public static void main(String[] args)
+  {
+    Scanner input = new Scanner(System.in);// record user input.
+    
+    double gallons; //this is where the value for gallons will go.
+    double liters; //this is where the complete convertion will go.
+    
+    System.out.print("Type in the amount of gallon:  ");
+    gallons = input.nextDouble();
+    
+    liters = gallons * 3.7854;
+    
+    System.out.print("You have " +gallons+ " which converts to " +liters);
+  
+  }
+}
